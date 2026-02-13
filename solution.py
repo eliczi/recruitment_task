@@ -2,6 +2,18 @@ import pandas as pd
 import re
 
 def add_virtual_column(df: pd.DataFrame, role: str, new_column: str) -> pd.DataFrame:
+    """
+    Adds a calculated column to a DataFrame based on a string expression.
+
+    Args:
+        df: The source pandas DataFrame.
+        role: A mathematical expression string (e.g., 'col_a * col_b').
+        new_column: The name of the new column to be created.
+
+    Returns:
+        A new DataFrame with the virtual column added, or an empty 
+        DataFrame if validation fails or an error occurs.
+    """
     if not re.fullmatch(r'[a-zA-Z_]+', new_column):
         return pd.DataFrame()
 

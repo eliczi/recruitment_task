@@ -46,10 +46,3 @@ def test_when_extra_spaces_in_rules():
     df_result = add_virtual_column(df, "  label_one + label_two ", "label_three")
     assert df_result.equals(df_expected), f"Should work when the role have extra spaces in the start/end.\n\nResult:\n\n{df_result}\n\nExpected:\n\n{df_expected}"
 
-# test_sum_of_two_columns()
-# test_multiplication_of_two_columns()
-# test_subtraction_of_two_columns()
-# test_empty_result_when_invalid_labels()
-# test_empty_result_when_invalid_rules()
-test_when_extra_spaces_in_rules()
-
